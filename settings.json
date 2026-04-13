@@ -7,25 +7,54 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tab_size": 2,
+  "agent_servers": {
+    "cursor": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    },
+    "qwen-code": {
+      "type": "registry"
+    }
+  },
+  "prettier": {
+    "allowed": true,
+    "semi": false,
+    "singleQuote": true,
+    "bracketSameLine": false,
+    "printWidth": 120,
+    "singleAttributePerLine": true
+  },
   "languages": {
     "JavaScript": {
-      "language_servers": ["typescript-language-server"]
+      "language_servers": ["typescript-language-server"],
+      "formatter": "prettier"
     },
     "TypeScript": {
-      "language_servers": ["typescript-language-server"]
+      "language_servers": ["typescript-language-server"],
+      "formatter": "prettier"
+    },
+    "Vue": {
+      "formatter": "prettier"
     }
   },
 
   "agent": {
-    "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-thinking"
     },
     "model_parameters": [],
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet"
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-opus-4-6-latest"
     }
   },
   "ui_font_size": 16,
